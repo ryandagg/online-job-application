@@ -1,0 +1,25 @@
+extends layout
+
+block content
+	.container
+		h1 Your applicant
+		ul#applications.list-unstyled
+			ul
+				li 
+					span.app-field Name: #{theApplicant.name}
+				li 
+					span.app-field Bio: 
+					span #{theApplicant.bio}
+				li 
+					span.app-field Skills: 
+					span #{theApplicant.skills}
+				li 
+					span.app-field Years of experience: 
+					span #{theApplicant.years}
+				li 
+					span.app-field Why work here? #{theApplicant.why}
+				//- li(hidden=true) #{theApplicant._id}
+				form(method='post' action='/delete')
+					input(type='text' name='_id' value="#{theApplicant._id}" hidden=true)
+					input(type='submit' value="Delete")
+

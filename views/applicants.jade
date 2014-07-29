@@ -8,19 +8,19 @@ block content
 				.app-section
 					ul
 						li 
-							span.app-field Name: 
-							span #{applicant.name}
-						li 
-							span.app-field Bio: 
-							span #{applicant.bio}
-						li 
-							span.app-field Skills: 
-							span #{applicant.skills}
-						li 
-							span.app-field Years of experience: 
-							span #{applicant.years}
-						li 
-							span.app-field Why work here? #{applicant.why}
+							span.app-field 
+								a(href="/_id#{applicant._id}") Name: #{applicant.name}
+						//- li 
+						//- 	span.app-field Bio: 
+						//- 	span #{applicant.bio}
+						//- li 
+						//- 	span.app-field Skills: 
+						//- 	span #{applicant.skills}
+						//- li 
+						//- 	span.app-field Years of experience: 
+						//- 	span #{applicant.years}
+						//- li 
+						//- 	span.app-field Why work here? #{applicant.why}
 						//- li(hidden=true) #{applicant._id}
 						form(method='post' action='/delete')
 							input(type='text' name='_id' value="#{applicant._id}" hidden=true)
